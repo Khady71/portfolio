@@ -1,0 +1,84 @@
+<header class="flex bg-white">
+  <nav class="bg-white p-4 shadow-lg sticky top-0 z-10">
+
+    <!-- CONTENEUR PRINCIPAL FLEX (Pousse les 3 sections aux bords) -->
+    <div class="flex items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- BLOC GAUCHE : Logo/Nom (Khady) -->
+      <div class="flex items-center space-x-2 text-xl font-extrabold text-gray-900">
+        <!-- Utilisation d'une icône SVG pour </> pour un rendu net -->
+        <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        <span>Khady</span>
+      </div>
+
+      <!-- BLOC CENTRAL : La Navigation Arrondie -->
+      <!-- Suppression de 'mx-auto' et 'max-w-fit' car le conteneur principal gère le positionnement -->
+      <div class="flex items-center space-x-4 bg-gray-100 p-2 rounded-full hidden lg:flex">
+        <!-- Bouton Actif (Home) -->
+        <a routerLink="/" class="
+                px-4 py-2 text-gray-900 font-medium
+                rounded-full
+                border-2 border-gray-900
+                transition-colors duration-200
+            ">
+          Home
+        </a>
+
+        <!-- Boutons Inactifs -->
+        <a routerLink="/about" class="
+                px-4 py-2 text-gray-700 font-medium
+                rounded-full
+                hover:bg-gray-200
+                transition-colors duration-200
+            ">
+          About me
+        </a>
+
+        <a routerLink="/projects" class="
+                px-4 py-2 text-gray-700 font-medium
+                rounded-full
+                hover:bg-gray-200
+                transition-colors duration-200
+            ">
+          Projects
+        </a>
+
+        <!-- Bouton d'Action Spécial -->
+        <a routerLink="/contact" class="
+                px-4 py-2 text-white font-medium
+                rounded-full
+                bg-emerald-700
+                hover:bg-emerald-600
+                shadow-md
+                transition-colors duration-200
+            ">
+          Hire Me! 👋
+        </a>
+
+      </div>
+
+      <!-- BLOC DROIT : Location et Température -->
+      <div class="flex items-center space-x-2 text-sm text-gray-600">
+        <!-- Icône de Lieu (Utilisation de Lucide Icons via SVG) -->
+        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243m10.606 0a9 9 0 11-12.728 0m10.606 0a9 9 0 00-12.728 0"></path>
+        </svg>
+
+        <span>Paris, </span>
+
+        <!-- Bloc de Température (Simulation) -->
+        <div class="flex items-center text-gray-900 font-semibold">
+          <!-- Icône Météo (Simulation) -->
+          <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <span class="ml-1">18°C</span>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
