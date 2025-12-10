@@ -1,11 +1,15 @@
 package com.example.springboot.repository;
 
-import com.example.springboot.model.Project;
+
+import com.example.springboot.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ProjectRepository extends JpaRepository<Project, UUID> {
+public interface UserRepository extends JpaRepository<User, UUID> {
+
+    Optional<User> findByEmail(String email);
+
 
 }

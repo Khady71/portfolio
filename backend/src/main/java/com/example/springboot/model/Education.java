@@ -18,6 +18,7 @@ public class Education {
     @UuidGenerator
     private UUID id;
 
+
     private String school;
     private String degree;
     private String field;

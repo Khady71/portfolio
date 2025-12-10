@@ -3,6 +3,12 @@ package com.example.springboot.repository;
 import com.example.springboot.model.Education;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EducationRepository extends JpaRepository<Education, Integer> {
+import java.util.Optional;
+import java.util.UUID;
 
+public interface EducationRepository extends JpaRepository<Education, UUID> {
+
+    void deleteById(UUID id);
+
+    Optional<Education> findById(UUID id);
 }

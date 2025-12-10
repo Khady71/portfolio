@@ -28,6 +28,8 @@ public class User {
 
     private String jobTitle;
 
+    private String urlProfile;
+
     private String location;
 
     private String profileImageUrl;

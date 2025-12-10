@@ -1,15 +1,19 @@
 package com.example.springboot.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
+
 @Entity
+@Table(name = "projects")
+@Getter  @Setter @NoArgsConstructor
 public class Project {
 
     @Id
@@ -33,9 +37,35 @@ public class Project {
 
     private String demoUrl;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "project_skills",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Skill> skills = new HashSet<>();
 
 
+    public void addSkill(Skill skill) {
+        this.skills.add(skill);
+        skill.getProjects().add(this);
+    }
 
+
+    public void removeSkill(Skill skill) {
+        this.skills.remove(skill);
+        skill.getProjects().remove(this);
+    }
+
+
+    public Project(String title, String description, String github) {
+        this.title = title;
+        this.description = description;
+        this.github = github;
+        this.skills = new HashSet<>();
+    }
 
 
 

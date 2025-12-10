@@ -20,7 +20,12 @@ public class Experience {
     @UuidGenerator
     private UUID id;
 
+    @Column(unique = true)
+    private String slug;
+
+
     private String company;
+
     private String position;
     private String logoUrl;
 
