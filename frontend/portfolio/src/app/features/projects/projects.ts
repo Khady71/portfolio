@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
+@Component({
+  selector: 'app-projects',
+  imports: [],
+  templateUrl: './projects.html',
+  styleUrl: './projects.scss',
 })
 export class Projects {
-  
+
 }
