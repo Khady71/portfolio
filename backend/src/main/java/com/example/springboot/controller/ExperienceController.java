@@ -26,6 +26,8 @@ public class ExperienceController {
         return experienceService.registerNewExperience(experience);
     }
 
+
+
     @PutMapping("{idExperience}/update")
     public Experience updateExperience(@PathVariable UUID idExperience, @RequestBody Experience experience) {
         return experienceService.updateExperience(idExperience, experience);

@@ -28,8 +28,12 @@ public class ProjectService {
                 .orElseThrow(() -> new ResourceNotFoundException("Projet non trouvé"));
     }
 
-        public List<Project> getAllProjects() {
+    public List<Project> getAllProjects() {
         return projectRepository.findAll();
+    }
+
+    public List<Project> getByCategory(Project.Category category) {
+        return projectRepository.findByCategory(category);
     }
 
     public Project createProject(Project project) {
@@ -49,6 +53,8 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
 
+
+
     public List<ProjectResponseDTO> getAllProjectsWithSkills() {
         return projectRepository.findAll().stream()
                 .map(ProjectResponseDTO::new)
@@ -66,6 +72,9 @@ public class ProjectService {
         return projectRepository.save(project);
     }
 
+    public Project getProjectBySlug(String slug) {
+        return projectRepository.findBySlug(slug);
+    }
 
 
 

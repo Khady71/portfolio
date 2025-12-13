@@ -37,6 +37,13 @@ public class Project {
 
     private String demoUrl;
 
+
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
+    public enum Category {MAIN, LAB}
+
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "project_skills",

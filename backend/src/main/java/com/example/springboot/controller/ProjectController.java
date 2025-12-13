@@ -17,9 +17,14 @@ public class ProjectController {
 
     private final ProjectService projectService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Project> getAllProjects() {
         return projectService.getAllProjects();
+    }
+
+    @GetMapping("/get/category/{category}")
+    public List<Project> getAllProjectsByCategory(@PathVariable Project.Category category) {
+        return projectService.getByCategory(category);
     }
 
     @PostMapping("/create")
@@ -37,9 +42,16 @@ public class ProjectController {
         return projectService.updateProject(id, project);
     }
 
+
+
     @DeleteMapping("/{id}")
     public void deleteProject(@PathVariable UUID id) {
         projectService.deleteProject(id);
+    }
+
+    @GetMapping("/slug/{slug}")
+    private Project getProjectBySlug(@PathVariable String slug) {
+        return projectService.getProjectBySlug(slug);
     }
 
     @PostMapping("/{projectId}/skills/{skillId}")
