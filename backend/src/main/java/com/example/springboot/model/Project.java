@@ -57,13 +57,13 @@ public class Project {
 
     public void addSkill(Skill skill) {
         this.skills.add(skill);
-        skill.getProjects().add(this);
+        skill.addProject(this);
     }
 
 
     public void removeSkill(Skill skill) {
         this.skills.remove(skill);
-        skill.getProjects().remove(this);
+        skill.removeProject(this);
     }
 
 

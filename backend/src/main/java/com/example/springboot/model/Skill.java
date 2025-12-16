@@ -13,7 +13,7 @@ import java.util.UUID;
 @Table(name="skills")
 @Getter
 @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class Skill {
+public class   Skill {
     @Id
     @GeneratedValue
     @UuidGenerator
@@ -25,6 +25,8 @@ public class Skill {
 
     @Enumerated(EnumType.STRING)
     private Category category;
+
+
 
     public enum Category {LANGUAGES, FRONTEND, BACKEND, DEVOPS, DATABASE, TOOL, DESIGN, MOBILE}
 
@@ -48,5 +50,6 @@ public class Skill {
         this.projects.remove(project);
         project.getSkills().remove(this);
     }
+
 
 }

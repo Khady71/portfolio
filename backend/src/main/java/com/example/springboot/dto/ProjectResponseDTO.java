@@ -22,7 +22,7 @@ public class ProjectResponseDTO {
     private String coverImageUrl;
     private String github;
     private String demoUrl;
-    private List<String> skillNames; // Juste les noms pour le front
+    private List<SkillDTO> skills; // ← Changé de List<String> à List<SkillDTO>
 
     public ProjectResponseDTO(Project project) {
         this.title = project.getTitle();
@@ -32,9 +32,10 @@ public class ProjectResponseDTO {
         this.coverImageUrl = project.getCoverImageUrl();
         this.github = project.getGithub();
         this.demoUrl = project.getDemoUrl();
-        this.skillNames = project.getSkills().stream()
-                .map(Skill::getTitle)
+        this.skills = project.getSkills().stream()
+                .map(SkillDTO::new)
                 .collect(Collectors.toList());
     }
 
 }
+

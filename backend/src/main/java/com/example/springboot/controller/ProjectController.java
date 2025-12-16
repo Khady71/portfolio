@@ -22,6 +22,18 @@ public class ProjectController {
         return projectService.getAllProjects();
     }
 
+    @GetMapping("/all-with-skills")
+    public List<ProjectResponseDTO> getAllProjectSkill() {
+        return projectService.getAllProjectsWithSkills();
+    }
+
+    @GetMapping("/{id}")
+    public Project getProjectById(
+            @PathVariable UUID id
+    ) {
+        return projectService.getProjectById(id);
+    }
+
     @GetMapping("/get/category/{category}")
     public List<Project> getAllProjectsByCategory(@PathVariable Project.Category category) {
         return projectService.getByCategory(category);

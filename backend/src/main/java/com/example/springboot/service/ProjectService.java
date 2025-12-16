@@ -105,9 +105,16 @@ public class ProjectService {
                     .orElseThrow(() -> new ResourceNotFoundException(
                             "Compétence non trouvée: " + title
                     ));
-            if (!project.getSkills().contains(skill)) {
-                project.addSkill(skill);
+
+            if (skill.getProjects() == null) {
+                skill.setProjects(new HashSet<>());
             }
+
+            // Utiliser la méthode helper
+            if (!project.getSkills().contains(skill)) {
+                project.addSkill(skill); // ← Cette méthode met à jour les deux côtés
+            }
+
         }
 
         return projectRepository.save(project);
