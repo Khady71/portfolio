@@ -1,17 +1,17 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Hero } from '../../shared/hero/hero';
-import { Projects } from '../../features/projects/projects';
-import { Education } from '../../features/education/education';
-import { Experiences } from '../experiences/experiences';
+import { Projects } from '../../components/projects/projects';
+import { Education } from '../../components/education/education';
+import { Experience } from '../../components/experience/experience';
 import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
    standalone: true,
-  imports: [Hero, Projects, Experiences, Education],
+  imports: [Hero, Projects, Experience, Education],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrl: './home.css',
 })
 export class Home implements AfterViewInit {
 

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 
 export interface Skill {
-  id: string;
+  id?: string ;
   name: string;
   iconUrl?: string;
   category?: 'FRONTEND' | 'BACKEND' | 'DEVOPS' | 'DATABASE' | 'TOOL' | 'DESIGN';
@@ -19,6 +19,7 @@ export interface Project {
   slug: string;
   shortDescription?: string;
   description?: string;
+  category?: string;  // MAIN | LAB
   coverImageUrl?: string;
   images?: string[];
   skills?: Skill[]; 
@@ -38,13 +39,21 @@ export class ProjectService {
 
   constructor(private http : HttpClient){}
 
-  getAllprojects():Observable<Project[]>{
-    return this.http.get<Project[]>(`${this.baseUrl}/all`);
+  getProjectsByCategory(category : string):Observable<Project[]>{
+    return this.http.get<Project[]>(`${this.baseUrl}/get/category/${category}`);
   }
 
   getProjectBySlug(slug: string): Observable<Project> {
     return this.http.get<Project>(`${this.baseUrl}/slug/${slug}`);
   }
+
+  getAllProjectsWithSkills():Observable<Project[]>{
+    return this.http.get<Project[]>(`${this.baseUrl}/all-with-skills`);
+  }
+
+  
+
+
 
 
   

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {Home} from './pages/home/home';
+import {Home} from './shared/home/home';
 
 
 
@@ -9,7 +9,7 @@ export const routes: Routes = [
     data: { title: 'Accueil' }
   },
   { path:'blog', 
-    loadComponent: () => import('./features/blog/blog')
+    loadComponent: () => import('./components/blog/blog')
     .then(m => m.Blog),
 
   },

@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts}"], // important pour Angular et templates inline
-  theme: { extend: {} },
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        'hero': "url('/assets/background2.jpg')",
+      },
+    },
+  },
   plugins: [],
-};
+}

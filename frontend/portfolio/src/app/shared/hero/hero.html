@@ -1,23 +1,58 @@
-<section class="w-full py-12 ">
-  <div class="container mx-auto flex items-center justify-between gap-8">
-
-    <!-- Photo -->
-    <div class="flex justify-center">
-      <img src="assets/pp_1.jpg" class="w-40 h-40 rounded-full object-cover">
-    </div>
-
-    <!-- Texte -->
-    <div class="max-w-md">
-      <h1 class="text-3xl font-bold mb-2">
-        {{user?.jobTitle}} 
-        <br> Java/Python
-      </h1>
+<section class="min-h-screen flex items-center bg-hero bg-no-repeat bg-cover md:h-screen">
+  <div class="max-w-7xl mx-auto px-6 py-20 m-8 w-full">
+    
+    <!-- Frosted card with improved layout -->
+    <div class="w-full max-w-6xl backdrop-blur-md bg-white/30 border border-white/20 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-2xl mx-auto">
       
+      <!-- Left: Content -->
+      <div class="flex-1 text-gray-900">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          Ingénieure Logiciel FullStack
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium">
+          Java / Python
+        </p>
 
-      
+        <!-- Skills Badges -->
+        <div class="flex flex-wrap gap-4 mb-10">
+          @for(skill of skills; track skill.iconUrl+skill.name){
+            <app-skill-badge
+              [iconUrl]="skill.iconUrl"
+              [name]="skill.name">
+            </app-skill-badge>
+          }
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <!-- Primary Button -->
+          <a 
+            href="#projects" 
+            class="group relative px-8 py-4 bg-linear-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <span class="relative z-10">Voir mes projets</span>
+            <div class="absolute inset-0 bg-linear-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          
+          <!-- Secondary Button -->
+          <a 
+            href="#about" 
+            class="group px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-800 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-200 hover:border-blue-600">
+            <span class="group-hover:text-blue-600 transition-colors">Découvrir mon parcours</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Circular photo -->
+      <div class="flex-shrink-0">
+        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl ring-4 ring-white/20">
+          <img 
+            src="assets/pp_1.jpg" 
+            alt="Photo de profil" 
+            class="w-full h-full object-cover">
+        </div>
+      </div>
+
     </div>
-
-  
-
   </div>
 </section>

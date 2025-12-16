@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+ --background-image-hero: url('./app/assets/background2.jpg');
+ --background-image-hero2: url("app/assets/background1.jpg")  
+
+}
+
+/* Google fonts are loaded in index.html; define fallback families */
+:root{
+  --bg-image: url('/portfolio/public/assets/background2.jpg') ;
+  --primary: #6366F1;
+  --secondary: #F59E0B;
+  --muted: #94A3B8;
+}
+
+
+/* Global body background (uses asset path) */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: rgba(17, 24, 39, 1);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+/* Slight overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.06) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure app content sits above the overlay */
+main, header, footer, section, app-header, app-footer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Typewriter cursor (plain css) */
+.typewriter-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  padding-right: 6px;
+  border-right: 2px solid rgba(17,24,39,0.85);
+}
+
+.typewriter-text::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  background: rgba(17,24,39,0.9);
+  animation: tw-blink 1s steps(1) infinite;
+  vertical-align: middle;
+}
+
+@keyframes tw-blink {
+  50% { opacity: 0; }
+}
+
+/* Responsive small tweaks using plain CSS (tailwind handles most) */
+@media (max-width: 768px) {
+  .profile-photo {
+    /* width/height handled by tailwind classes; this ensures a baseline */
+    border-width: 2px;
+  }
+}
+
+  
+ 
