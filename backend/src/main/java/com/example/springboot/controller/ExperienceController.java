@@ -1,5 +1,7 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.dto.ExperienceResponseDTO;
+import com.example.springboot.dto.ProjectResponseDTO;
 import com.example.springboot.model.Experience;
 import com.example.springboot.model.Project;
 import com.example.springboot.service.ExperienceService;
@@ -21,6 +23,12 @@ public class ExperienceController {
     public List<Experience> getAllExperiences() {
         return experienceService.getAllExperiences();
     }
+
+    @GetMapping("/all-with-skills")
+    public List<ExperienceResponseDTO> getAllExperiencesSkill() {
+        return experienceService.getAllExperiencesWithSkills();
+    }
+
 
     @PostMapping("/create")
     public Experience addExperience(@RequestBody Experience experience) {

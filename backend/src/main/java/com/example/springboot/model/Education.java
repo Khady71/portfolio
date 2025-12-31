@@ -23,6 +23,7 @@ public class Education {
     private String degree;
     private String field;
     private String location;
+    private String logoUrl;
     private LocalDate startDate;
     private LocalDate endDate;
 

@@ -28,7 +28,7 @@ public class Project {
 
     private String shortDescription;
 
-    @Column()
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     private String coverImageUrl;

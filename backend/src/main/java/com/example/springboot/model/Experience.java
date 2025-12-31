@@ -30,6 +30,7 @@ public class Experience {
 
     private String position;
     private String logoUrl;
+    private String location;
 
     private LocalDate startDate;
     private LocalDate endDate;
@@ -47,13 +48,11 @@ public class Experience {
 
     public void addSkill(Skill skill) {
         this.skills.add(skill);
-        skill.addExperience(this);
     }
 
 
     public void removeSkill(Skill skill) {
         this.skills.remove(skill);
-        skill.removeExperience(  this);
     }
 
     @Column(columnDefinition = "text")

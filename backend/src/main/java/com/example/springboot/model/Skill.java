@@ -56,16 +56,6 @@ public class Skill {
     @EqualsAndHashCode.Exclude
     private Set<Experience> experiences = new HashSet<>();
 
-    public void addExperience(Experience experience) {
-        this.experiences.add(experience);
-        experience.getSkills().add(this);
-    }
-
-
-    public void removeExperience(Experience experience) {
-        this.experiences.remove(experience);
-        experience.getSkills().remove(this);
-    }
 
 
 }
