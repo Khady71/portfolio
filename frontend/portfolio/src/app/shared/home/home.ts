@@ -1,15 +1,16 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Hero } from '../../shared/hero/hero';
 import { Projects } from '../../components/projects/projects';
-import { Education } from '../../components/education/education';
-import { Experience } from '../../components/experience/experience';
+import { Educations } from '../../components/education/educations';
+import { Experiences } from '../../components/experience/experiences';
 import { ActivatedRoute } from '@angular/router';
+import { SkillComponent } from '../../components/skill/skill-component/skill-component';
 
 
 @Component({
   selector: 'app-home',
    standalone: true,
-  imports: [Hero, Projects, Experience, Education],
+  imports: [Hero, Projects, Experiences, Educations, SkillComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

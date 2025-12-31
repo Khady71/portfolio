@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
- --background-image-hero: url('./app/assets/background2.jpg');
- --background-image-hero2: url("app/assets/background1.jpg")  
+ --background-image-hero1: url('/assets/background2.jpg');
+ --background-image-hero2: url("/assets/background1.jpg")  
 
 }
 
 /* Google fonts are loaded in index.html; define fallback families */
 :root{
-  --bg-image: url('/portfolio/public/assets/background2.jpg') ;
+  --bg-hero1: url('/assets/background1.jpg'); 
+  --bg-hero1: url('/assets/background1.jpg'); 
+  --bg-hero2: url('/assets/background2.jpg'); 
   --primary: #6366F1;
   --secondary: #F59E0B;
   --muted: #94A3B8;
@@ -17,9 +19,8 @@
 
 /* Global body background (uses asset path) */
 body {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: rgba(17, 24, 39, 1);
-  background-image: var(--bg-image);
+  background-image: var(--bg-hero);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -33,7 +34,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.06) 100%);
+  /* background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.06) 100%); */
   pointer-events: none;
   z-index: 0;
 }
@@ -74,6 +75,47 @@ main, header, footer, section, app-header, app-footer {
     /* width/height handled by tailwind classes; this ensures a baseline */
     border-width: 2px;
   }
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/Lora/Lora-Regular.woff2') format('woff2');
+  font-weight: 400;
+
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/Lora/Lora-Medium.woff2') format('woff2');
+  font-weight: 500;
+
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/Lora/Lora-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+
+@font-face {
+  font-family: 'Hoover';
+  src: url('/assets/fonts/Hoover/Hoover-Regular.woff2') format('woff2');
+  font-weight: 400;
+
+}
+
+@font-face {
+  font-family: 'Hoover';
+  src: url('/assets/fonts/Hoover/Hoover-Medium.woff2') format('woff2');
+  font-weight: 500;
+
+}
+
+@font-face {
+  font-family: 'Hoover';
+  src: url('/assets/fonts/Hoover/Hoover-Bold.woff2') format('woff2');
+  font-weight: 700;
 }
 
   

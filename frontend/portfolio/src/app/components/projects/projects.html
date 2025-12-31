@@ -1,26 +1,47 @@
-<section id="projects" class="min-h-screen py-20 ">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <!-- Header Section -->
-    <div class="flex items-center gap-4 mb-12">
-      <div class="w-12 h-12 bg-linear-to-br from-amber-900 to-amber-950 rounded-lg flex items-center justify-center shadow-lg">
-        <img
-          src="https://icongr.am/clarity/briefcase.svg?size=64&color=ffffff"
-          alt="briefcase icon"
-          class="w-7 h-7"
-        />
-      </div>
-      <h2 class="text-3xl md:text-4xl font-bold text-black">Projets</h2>
-    </div>
+  <section id="projects" class="min-h-screen ">
+    <div class="max-w-7xl mx-auto m-8 px-6  w-full ">
+        
+            <!-- Header Section -->
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-linear-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center shadow-lg">
+                    <img src="https://icongr.am/clarity/briefcase.svg?size=64&color=ffffff" class="w-7 h-7" />
+                </div>
 
-    <!-- Projects List -->
-    <div class="space-x-20">
-      @for(project of mainProjects; track project.title) {
-        <app-project-detail 
-          [project]="project">
-        </app-project-detail>
-      }
+                <h2 class="text-3xl md:text-5xl font-[Hoover] font-bold text-black px-4 py-2 bg-white/40 backdrop-blur-sm rounded-lg">
+                    Projets
+                </h2>
+            </div>
+
+
+            <!-- Projects List -->
+            <div class="space-x-20  m-8">
+                @for(project of mainProjects; track project.title) {
+                    <app-project-detail 
+                    [project]="project">
+                    </app-project-detail>
+                }
+            </div>
+            <br>
+            <br>
+            <div >
+            <!-- Header Section -->
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-linear-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center shadow-lg">
+                    <img src="https://icongr.am/clarity/briefcase.svg?size=64&color=ffffff" class="w-7 h-7" />
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-[Hoover] font-bold text-black px-4 py-2 bg-white/40 backdrop-blur-sm rounded-lg">
+                    Autres 
+                </h2>
+            </div>
+                <div class="flex flex-row w-full justify-between  m-8">
+                @for(labProject of labProjects; track labProject.title){
+                    <app-lab-project
+                    [labProject]="labProject">
+                    </app-lab-project>  
+                }
+            </div>
+        </div>
+            
     </div>
-    
-  </div>
 </section>

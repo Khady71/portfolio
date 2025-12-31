@@ -7,6 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './techno-badge.css',
 })
 export class TechnoBadge {
-  @Input() name: string = '';
+  @Input() title: string = '';
+  @Input() url: string = '';
+
+  // ngOnInit(){
+  //   console.log('naaame',name);
+  // }
 
 }

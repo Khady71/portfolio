@@ -1,63 +1,52 @@
 <!-- header.component.html -->
-<header class="sticky top-0 z-50 bg-transparent shadow-md">
+<header class="fixed top-0 left-0 right-0 ">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <!-- Left: Branding (logo + nom) -->
-      <div class="flex items-center space-x-3">
-        <svg class="w-6 h-6 text-emerald-700 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-        </svg>
-        <div class="leading-tight">
-          <div class="text-lg font-extrabold text-gray-900">Khady Gaye</div>
-          <!-- petite info secondaire sous le nom, optionnel -->
-          <!--<div class="text-xs text-gray-500">Frontend • Portfolio</div>-->
+        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+            <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+            <div class="text-lg font-[Lora] font-extrabold text-gray-900">Khady Gaye</div>
         </div>
-      </div>
 
-      <!-- Middle: Navigation (visible lg et plus) -->
-      <nav class="hidden lg:flex items-center space-x-4 bg-transparent p-2 rounded-full">
-        <button (click)="goToSection('home')" class="px-4 py-2 text-gray-900 font-medium rounded-full border-2 border-gray-900 transition-colors duration-200">Home</button>
+        <!-- Navigation Desktop -->
+        <nav class="hidden font-[Lora] lg:flex items-center space-x-2 backdrop-blur-lg bg-white/40 p-2 rounded-full border border-gray-900/20 shadow-lg">
+            <button (click)="goToSection('home')" class="px-4 py-2 text-gray-900 font-medium rounded-full hover:bg-white/50 transition-all duration-200">Home</button>
+            <button (click)="goToSection('projects')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white/50 transition-all duration-200">Projects</button>
+            <button (click)="goToSection('experiences')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white/50 transition-all duration-200">Experiences</button>
+            <button (click)="goToSection('education')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white/50 transition-all duration-200">Education</button>
+            <a routerLink="/blog" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-white/50 transition-all duration-200">Blog</a>
+        </nav>
 
-        <button (click)="goToSection('projects')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors duration-200">Projects</button>
-
-        <button (click)="goToSection('experiences')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors duration-200">Experiences</button>
-
-        <button (click)="goToSection('education')" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors duration-200">Education</button>
-
-        <a routerLink="/blog" class="px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors duration-200">Blog</a>
-      </nav>
-
-      <!-- Right: Location / météo -->
-      <div class="flex items-center space-x-2 text-sm text-gray-600">
-        <span class="hidden sm:inline">Paris,</span>
-        <div class="flex items-center text-gray-900 font-semibold">
-          <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-          </svg>
-          <span class="ml-1">18°C</span>
+        <!-- Météo -->
+        <div class="hidden lg:flex items-center space-x-2 text-sm backdrop-blur-md bg-white/30 px-4 py-2 rounded-full border border-gray-900/20">
+            <span class="text-gray-600 font-[Lora]">Paris,</span>
+            <div class="flex items-center text-gray-900 font-semibold">
+            <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <span class="ml-1">18°C</span>
+            </div>
         </div>
-      </div>
 
-      <!-- Mobile: bouton burger (visible lg:hidden). Gère l'ouverture du menu mobile dans TS -->
-      <div class="lg:hidden">
-        <button (click)="toggleMobileMenu()" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-100">
-          <!-- simple icône burger -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+        <!-- Bouton Mobile -->
+        <button (click)="toggleMobileMenu()" class="lg:hidden p-2 rounded-full backdrop-blur-md bg-white/30 hover:bg-white/50 transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path *ngIf="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path *ngIf="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
         </button>
-      </div>
-    </div>
+        </div>
   </div>
 
-  <!-- Mobile menu (optionnel) -->
-  <div *ngIf="mobileMenuOpen" class="lg:hidden bg-white border-t">
-    <div class="px-4 py-3 space-y-2">
-      <button (click)="mobileNavigate('home')" class="block w-full text-left px-3 py-2 rounded-md">Home</button>
-      <button (click)="mobileNavigate('projects')" class="block w-full text-left px-3 py-2 rounded-md">Projects</button>
-      <button (click)="mobileNavigate('experiences')" class="block w-full text-left px-3 py-2 rounded-md">Experiences</button>
-      <button (click)="mobileNavigate('education')" class="block w-full text-left px-3 py-2 rounded-md">Education</button>
-      <a routerLink="/blog" (click)="closeMobileMenu()" class="block px-3 py-2 rounded-md">Blog</a>
+  <!-- Menu Mobile -->
+  <nav *ngIf="mobileMenuOpen" class="lg:hidden backdrop-blur-lg bg-white/80 border-t border-white/20 shadow-xl">
+    <div class="px-4 py-4 space-y-1">
+      <button (click)="mobileNavigate('home')" class="block w-full text-left px-4 py-3 rounded-xl backdrop-blur-md bg-white/40 hover:bg-white/60 font-medium transition-all">Home</button>
+      <button (click)="mobileNavigate('projects')" class="block w-full text-left px-4 py-3 rounded-xl backdrop-blur-md bg-white/40 hover:bg-white/60 font-medium transition-all">Projects</button>
+      <button (click)="mobileNavigate('experiences')" class="block w-full text-left px-4 py-3 rounded-xl backdrop-blur-md bg-white/40 hover:bg-white/60 font-medium transition-all">Experiences</button>
+      <button (click)="mobileNavigate('education')" class="block w-full text-left px-4 py-3 rounded-xl backdrop-blur-md bg-white/40 hover:bg-white/60 font-medium transition-all">Education</button>
+      <a routerLink="/blog" (click)="closeMobileMenu()" class="block px-4 py-3 rounded-xl backdrop-blur-md bg-white/40 hover:bg-white/60 font-medium transition-all">Blog</a>
     </div>
-  </div>
+  </nav>
 </header>

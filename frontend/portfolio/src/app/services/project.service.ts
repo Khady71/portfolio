@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 export interface Skill {
   id?: string ;
-  name: string;
+  title: string;
   iconUrl?: string;
   category?: 'FRONTEND' | 'BACKEND' | 'DEVOPS' | 'DATABASE' | 'TOOL' | 'DESIGN';
   level?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | 'EXPERT';

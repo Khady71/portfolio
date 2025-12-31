@@ -1,0 +1,56 @@
+<div class="backdrop-blur-md font-['Lora'] bg-white/30 border border-white/20  rounded-xl p-6 md:p-8 hover:bg-slate-800/30 transition-all duration-300 shadow-xl">
+  
+ <!-- Header with logo, title, and dates -->
+<div class="flex justify-between items-start mb-4 flex-wrap gap-4">
+  <!-- Left side: Logo + Text info -->
+  <div class="flex items-start gap-4 flex-1 min-w-0">
+        <!-- Logo container -->
+        @if(experience.logoUrl) {
+        <div class="w-20 h-20 ">
+            <img 
+            [src]="experience.logoUrl" 
+            [alt]="experience.company + ' logo'"
+            class="w-full h-full object-contain "
+            onerror="this.style.display='none'">
+        </div>
+        }
+    
+    <!-- Text content - stacked vertically -->
+    <div class="min-w-0">
+      <h3 class="text-xl md:text-2xl font-bold text-black mb-1">
+        {{ experience.position }}
+      </h3>
+      <p class="text-blue-800 text-lg font-medium">
+        {{ experience.company }}
+      </p>
+    </div>
+  </div>
+  
+  <!-- Right side: Dates -->
+  <span class="text-blue-800  text-sm md:text-base whitespace-nowrap">
+    {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
+  </span>
+</div>
+
+  <!-- Description as bullet points -->
+  <ul class="space-y-3 mb-6 text-gray-900">
+    @for(point of getDescriptionPoints(); track $index) {
+      @if(point.trim()) {
+        <li class="flex gap-3">
+          <span class="text-gray-900 mt-1.5 shrink-0">▸</span>
+          <span class="leading-relaxed text-black">{{ point.trim() }}</span>
+        </li>
+      }
+    }
+  </ul>
+
+  <!-- Skills Badges -->
+  <div class="flex flex-wrap gap-2 md:gap-3">
+    @for(skill of experience.skills; track skill.title) {
+      <app-techno-badge 
+        [title]="skill.title">
+      </app-techno-badge>
+    }
+  </div>
+
+</div>

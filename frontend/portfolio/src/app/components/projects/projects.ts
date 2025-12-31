@@ -2,12 +2,13 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ProjectService, Project } from '../../services/project.service';
 import { ProjectDetail } from './project-detail/project-detail';
 import { catchError, of } from 'rxjs';
+import { LabProject } from './lab-projects/lab-project';
 
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectDetail],
+  imports: [ProjectDetail, LabProject],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -41,8 +42,9 @@ export class Projects {
           this.projects = projects;
           console.log("Projecrsrecus", projects)
           this.separateProjectsByCategory(projects);
+          this.sortProjectsByTitle();
             this.isLoading = false;
-            console.log('main projects',this.mainProjects);
+            
         }
       })
     }
@@ -61,6 +63,12 @@ export class Projects {
       }
     });
 }
+
+  sortProjectsByTitle() {
+    this.mainProjects.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+  }
 
     
 

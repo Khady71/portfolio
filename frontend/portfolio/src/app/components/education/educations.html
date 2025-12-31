@@ -1,0 +1,27 @@
+<section id="education" class="min-h-screen py-20">
+    <div class="max-w-7xl mx-auto m-8 px-6  w-full ">
+
+        <div>
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-linear-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                </div>
+                    <h2 class="text-3xl md:text-5xl font-[Hoover] font-bold text-black px-4 py-2 bg-white/40 backdrop-blur-sm rounded-lg">
+                    Formation
+                </h2>
+            </div>
+        </div>
+        
+        <!-- Grid layout for education cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @for(education of educations; track education.degree){
+                <app-education-detail 
+                [education]="education">
+                </app-education-detail>
+            }
+        </div>
+    </div>
+</section>

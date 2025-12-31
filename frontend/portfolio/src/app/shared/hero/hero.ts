@@ -45,23 +45,23 @@ export class Hero implements OnInit, OnDestroy{
 
    skills: Skill[] = [
     {
-      name: 'Java',
+      title: 'Java',
       iconUrl: 'https://icongr.am/devicon/java-original.svg?size=128&color=currentColor'
     },
     {
-      name: 'Angular',
+      title: 'Angular',
     iconUrl: 'https://icongr.am/devicon/angularjs-original.svg?size=128&color=currentColor'
     },
     {
-      name: 'Python',
+      title: 'Python',
     iconUrl: 'https://icongr.am/devicon/python-original.svg?size=128&color=currentColor'
     },
     {
-      name: 'Flutter',
+      title: 'Flutter',
       iconUrl: 'https://cdn.simpleicons.org/flutter'
     },
     {
-      name: 'Next.js',
+      title: 'Next.js',
       iconUrl: 'https://cdn.simpleicons.org/nextdotjs'
     },
 
