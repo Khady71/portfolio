@@ -13,7 +13,7 @@ import java.util.UUID;
 @Table(name="skills")
 @Getter
 @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class   Skill {
+public class Skill {
     @Id
     @GeneratedValue
     @UuidGenerator
@@ -49,6 +49,22 @@ public class   Skill {
     public void removeProject(Project project) {
         this.projects.remove(project);
         project.getSkills().remove(this);
+    }
+
+    @ManyToMany(mappedBy = "skills", fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Experience> experiences = new HashSet<>();
+
+    public void addExperience(Experience experience) {
+        this.experiences.add(experience);
+        experience.getSkills().add(this);
+    }
+
+
+    public void removeExperience(Experience experience) {
+        this.experiences.remove(experience);
+        experience.getSkills().remove(this);
     }
 
 

@@ -6,6 +6,8 @@ import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -31,6 +33,28 @@ public class Experience {
 
     private LocalDate startDate;
     private LocalDate endDate;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "experience_skills",
+            joinColumns = @JoinColumn(name = "experience_id"),
+            inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Skill> skills = new HashSet<>();
+
+
+    public void addSkill(Skill skill) {
+        this.skills.add(skill);
+        skill.addExperience(this);
+    }
+
+
+    public void removeSkill(Skill skill) {
+        this.skills.remove(skill);
+        skill.removeExperience(  this);
+    }
 
     @Column(columnDefinition = "text")
     private String description;

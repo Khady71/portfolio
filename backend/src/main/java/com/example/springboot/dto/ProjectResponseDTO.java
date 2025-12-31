@@ -19,6 +19,7 @@ public class ProjectResponseDTO {
     private String slug;
     private String shortDescription;
     private String description;
+    private String category;
     private String coverImageUrl;
     private String github;
     private String demoUrl;
@@ -29,6 +30,7 @@ public class ProjectResponseDTO {
         this.slug = project.getSlug();
         this.shortDescription = project.getShortDescription();
         this.description = project.getDescription();
+        this.category = String.valueOf(project.getCategory());
         this.coverImageUrl = project.getCoverImageUrl();
         this.github = project.getGithub();
         this.demoUrl = project.getDemoUrl();

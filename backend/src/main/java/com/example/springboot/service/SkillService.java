@@ -26,8 +26,8 @@ public class SkillService {
     }
 
     public Skill addSkill(Skill skill) {
-        if(skillRepository.existsById(skill.getId())) {
-            throw new ResourceNotFoundException("Skill déjà existant");
+        if (skill.getId() != null) {
+            throw new IllegalArgumentException("L'ID ne doit pas être fourni pour la création");
         }
         return skillRepository.save(skill);
     }

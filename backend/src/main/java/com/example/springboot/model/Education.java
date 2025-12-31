@@ -22,6 +22,7 @@ public class Education {
     private String school;
     private String degree;
     private String field;
+    private String location;
     private LocalDate startDate;
     private LocalDate endDate;
 
