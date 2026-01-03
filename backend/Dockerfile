@@ -1,8 +1,17 @@
-FROM eclipse-temurin:21-jdk
+FROM eclipse-temurin:21-jdk-alpine as builder
+
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+COPY src src
+
+RUN ./mvnw clean package -DskipTests
+
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
