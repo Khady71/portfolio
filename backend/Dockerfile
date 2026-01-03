@@ -1,8 +1,15 @@
 FROM eclipse-temurin:21-jdk-alpine as builder
 
+# ADD THIS LINE
+WORKDIR /app
+
 COPY pom.xml .
 COPY mvnw .
 COPY .mvn .mvn
+
+# ADD THIS LINE
+RUN chmod +x mvnw
+
 COPY src src
 
 RUN ./mvnw clean package -DskipTests
