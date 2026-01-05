@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Skill } from './project.service';
+import { environment } from '../../environments/environment';
 
 export interface Experience {
   id: string;
@@ -22,7 +23,7 @@ export interface Experience {
 })
 export class ExperienceService {
 
-  private baseUrl = 'http://localhost:8080/api/experiences';
+  private baseUrl = `${environment.apiUrl}/experiences`;
 
   constructor(private http : HttpClient){};
 
