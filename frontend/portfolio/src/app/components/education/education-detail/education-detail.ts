@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Education } from '../../../services/education.service';
-import { TechnoBadge } from '../../../shared/techno-badge/techno-badge/techno-badge';
+import { TechnoBadge } from '../../../shared/techno-badge/techno-badge';
 
 @Component({
   selector: 'app-education-detail',

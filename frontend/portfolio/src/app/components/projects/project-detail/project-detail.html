@@ -14,6 +14,7 @@
   <div class="flex flex-wrap gap-3 mb-6">
     @for(skill of project.skills; track skill.title) {
       <app-techno-badge 
+      [iconUrl]="skill.iconUrl"
         [title]="skill.title">
       </app-techno-badge>
     }

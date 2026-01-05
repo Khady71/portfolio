@@ -27,9 +27,17 @@
   </div>
   
   <!-- Right side: Dates -->
-  <span class="text-blue-800  text-sm md:text-base whitespace-nowrap">
-    {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
-  </span>
+   <div class="text-right">
+        <div class="text-blue-800  text-sm md:text-base ">
+        {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
+        </div>
+         <div class="text-gray-600 text-sm mt-1">
+            {{ experience.location }}
+         </div>
+  </div>
+
+
+
 </div>
 
   <!-- Description as bullet points -->
@@ -48,7 +56,8 @@
   <div class="flex flex-wrap gap-2 md:gap-3">
     @for(skill of experience.skills; track skill.title) {
       <app-techno-badge 
-        [title]="skill.title">
+        [title]="skill.title"
+        [iconUrl]="skill.iconUrl">
       </app-techno-badge>
     }
   </div>

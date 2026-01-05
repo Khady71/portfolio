@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TechnoBadge } from '../../../shared/techno-badge/techno-badge/techno-badge';
+import { TechnoBadge } from '../../../shared/techno-badge/techno-badge';
 
 @Component({
   selector: 'app-skills',

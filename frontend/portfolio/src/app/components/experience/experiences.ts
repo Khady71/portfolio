@@ -20,22 +20,22 @@ export class Experiences {
       this.loadExperiences();
     }
 
-loadExperiences(){
-  this.isLoading = true;
-  this.error = undefined;
+  loadExperiences(){
+    this.isLoading = true;
+    this.error = undefined;
 
-  this.experienceService.getAllExperiences().pipe(
-    catchError(error =>{
-      this.error = 'Impossible de charger les experiences';
-      this.isLoading = false;
-      return of([]); //
-    })
-  ).subscribe({
-    next: (experiences) => {
-      this.experiences = experiences;
+    this.experienceService.getAllExperiencesWithSkills().pipe(
+      catchError(error =>{
+        this.error = 'Impossible de charger les experiences';
+        this.isLoading = false;
+        return of([]); //
+      })
+    ).subscribe({
+      next: (experiences) => {
+        this.experiences = experiences;
+      }
     }
-  }
-  )
+    )
 }
 
 }

@@ -7,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './footer.css',
 })
 export class Footer {
-   name = 'Votre Nom';
-  tagline = 'Développeur FullStack passionné par la création d\'applications web modernes et performantes.';
+   name = 'Khady';
+  tagline = 'Ingénieure FullStack passionnée par la création d\'applications modernes et performantes.';
   location = 'Paris, France';
   
   currentYear = new Date().getFullYear();
   
   socialLinks = {
-    github: 'https://github.com/votre-username',
-    linkedin: 'https://linkedin.com/in/votre-profil',
-    twitter: 'https://twitter.com/votre-username',
-    email: 'votre.email@example.com'
+    github: 'https://github.com/Khady71',
+    linkedin: 'https://linkedin.com/in/khady-gaye',
+    twitter: 'https://x.com/XouryG',
+    email: 'kgaye809@gmail.com'
   };
 
 }

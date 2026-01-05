@@ -11,6 +11,7 @@ export interface Experience {
   startDate?: string; 
   endDate?: string | null;
   description?: string;
+  location?:string;
   skills?: Skill[];
 }
 
@@ -27,6 +28,9 @@ export class ExperienceService {
 
    getAllExperiences():Observable<Experience[]>{
       return this.http.get<Experience[]>(`${this.baseUrl}/all`);
+    }
+    getAllExperiencesWithSkills():Observable<Experience[]>{
+      return this.http.get<Experience[]>(`${this.baseUrl}/all-with-skills`);
     }
   
 }

@@ -9,6 +9,7 @@ export interface Education {
   field?: string;
   location?:string;
   startDate?: string; 
+  logoUrl?:string;
   endDate?: string | null;
   description?: string;
 }
