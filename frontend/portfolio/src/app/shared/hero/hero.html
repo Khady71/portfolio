@@ -1,58 +1,82 @@
-<section class="min-h-screen flex items-center  md:h-screen ">
-  <div class="max-w-7xl mx-auto px-6 py-20 m-8 w-full ">
+<section class="min-h-screen flex items-center md:h-screen">
+  <div class="max-w-375 mx-auto px-4 sm:px-6 py-12 sm:py-20 w-full">
         
-        <!-- Frosted card with improved layout -->
-        <div class="w-full max-w-6xl backdrop-blur-md bg-white/20 border border-white/90 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-2xl mx-auto">
-            
-            <!-- Left: Content -->
-            <div class="flex-1 text-gray-900 ">
-                <h1 class="text-4xl md:text-5xl lg:text-5xl font-['Lora'] font-bold mb-4 leading-tight animate-typewriter animate-blinkCaret">
-                Ingénieure Logiciel FullStack
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-black mb-8 font-['Lora'] font-bold">
-                Java / Python
-                </p>
+    <!-- Frosted card with improved layout -->
+    <div class="w-full max-w-6xl backdrop-blur-md bg-white/20 border border-white/90 
+      rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 
+      flex flex-col md:flex-row items-center gap-8 sm:gap-12 
+      shadow-2xl mx-auto hover:bg-slate-800/10 transition-all duration-300">
+        
+      <!-- Photo en premier sur mobile -->
+      <div class="shrink-0 order-first md:order-last">
+        <div class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 
+          rounded-full overflow-hidden border-4 border-white/40 
+          shadow-2xl ring-4 ring-white/20">
+          <img 
+            src="assets/pp_1.jpg" 
+            alt="Photo de profil" 
+            class="w-full h-full object-cover">
+        </div>
+      </div>
 
-                <!-- Skills Badges -->
-                <div class="flex flex-wrap gap-4 mb-10">
-                @for(skill of skills; track skill.iconUrl+skill.title){
-                    <app-skill-badge
-                    [iconUrl]="skill.iconUrl"
-                    [name]="skill.title">
-                    </app-skill-badge>
-                }
-                </div>
+      <!-- Content -->
+      <div class="flex-1 text-primary text-center md:text-left">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+          font-['Lora'] font-bold mb-4 sm:mb-6 md:mb-8">
+          Ingénieure Logiciel FullStack
+        </h1>
 
-                <!-- Call to Action Buttons -->
-                <div class="flex flex-wrap gap-4">
-                <!-- Primary Button -->
-                <a 
-                    href="#projects" 
-                    class="group relative px-8 py-4 bg-gray-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border-2 border-gray-200 hover:border-gray-950">
-                    <span class="relative z-10 font-['Lora'] ">Voir mes projets</span>
-                    <!-- <div class="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-300 "></div> -->
-                </a>
-                
-                <!-- Secondary Button -->
-                <a 
-                    href="#about" 
-                    class="group px-8 py-4 bg-white/60  text-gray-800 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1  overflow-hidden border-2 border-gray-200 hover:border-gray-950">
-                    <span class="group-hover:text-gray-950 transition-colors font-['Lora']">Découvrir mon parcours</span>
-                </a>
-                </div>
-            </div>
+        <p class="text-white font-['Lora'] text-sm sm:text-base 
+          leading-6 sm:leading-8 mb-6 sm:mb-8">
+          Je modélise des systèmes et implémente des solutions digitales 
+          utilisant le développement informatique. Ceci est un portfolio 
+          présentant mon parcours et mes projets phares.
+        </p>
 
-            <!-- Right: Circular photo -->
-            <div class="shrink-0 animate-float">
-                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl ring-4 ring-white/20">
-                <img 
-                    src="assets/pp_1.jpg" 
-                    alt="Photo de profil" 
-                    class="w-full h-full object-cover">
-                </div>
-            </div>
+        <!-- Skills Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-y-8 
+          mb-6 sm:mb-8 md:mb-10 justify-items-center">
+          @for(skill of skills; track skill.iconUrl+skill.title){
+            <app-skill-badge
+              [iconUrl]="skill.iconUrl"
+              [name]="skill.title">
+            </app-skill-badge>
+          }
+        </div>
 
-            </div>
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 
+          justify-center md:justify-start">
+          
+          <!-- Primary Button -->
+          <a 
+            href="#projects" 
+            class="group relative px-6 sm:px-8 py-3 sm:py-4 
+              bg-gray-700 text-white font-semibold rounded-xl 
+              shadow-lg hover:shadow-2xl transition-all duration-300 
+              hover:-translate-y-1 overflow-hidden border-2 
+              border-gray-200 hover:border-gray-950 text-center">
+            <span class="relative z-10 font-['Lora'] text-sm sm:text-base">
+              Voir mes projets
+            </span>
+          </a>
+          
+          <!-- Secondary Button -->
+          <a 
+            href="#about" 
+            class="group px-6 sm:px-8 py-3 sm:py-4 
+              bg-white/60 text-gray-800 font-semibold rounded-xl 
+              shadow-lg hover:shadow-2xl transition-all duration-300 
+              hover:-translate-y-1 overflow-hidden border-2 
+              border-gray-200 hover:border-gray-950 text-center">
+            <span class="group-hover:text-gray-950 transition-colors 
+              font-['Lora'] text-sm sm:text-base">
+              Découvrir mon parcours
+            </span>
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>

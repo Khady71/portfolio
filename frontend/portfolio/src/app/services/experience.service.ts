@@ -23,7 +23,7 @@ export interface Experience {
 })
 export class ExperienceService {
 
-  private baseUrl = `${environment.apiUrl}/experiences`;
+  private baseUrl = `${environment.apiUrl}/api/experiences`;
 
   constructor(private http : HttpClient){};
 

@@ -37,7 +37,7 @@ export interface Project {
   providedIn: 'root',
 })
 export class ProjectService {
-  private baseUrl = `${environment.apiUrl}/projects`;
+  private baseUrl = `${environment.apiUrl}/api/projects`;
 
   constructor(private http : HttpClient){}
 

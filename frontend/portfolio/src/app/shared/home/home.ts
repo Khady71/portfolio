@@ -4,13 +4,12 @@ import { Projects } from '../../components/projects/projects';
 import { Educations } from '../../components/education/educations';
 import { Experiences } from '../../components/experience/experiences';
 import { ActivatedRoute } from '@angular/router';
-import { SkillComponent } from '../../components/skill/skill-component/skill-component';
 
 
 @Component({
   selector: 'app-home',
    standalone: true,
-  imports: [Hero, Projects, Experiences, Educations, SkillComponent],
+  imports: [Hero, Projects, Experiences, Educations],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
