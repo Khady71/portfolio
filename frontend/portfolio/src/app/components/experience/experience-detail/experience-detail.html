@@ -1,51 +1,89 @@
-<div class="backdrop-blur-md font-['Lora'] bg-white/30 border border-white/20  rounded-xl p-6 md:p-8 hover:bg-slate-800/30 transition-all duration-300 shadow-xl">
+<div class="backdrop-blur-md font-['Lora'] bg-white/30 border border-white/20 rounded-xl p-4 sm:p-6 md:p-8 hover:bg-slate-800/30 transition-all duration-300 shadow-xl">
   
- <!-- Header with logo, title, and dates -->
-<div class="flex justify-between items-start mb-4 flex-wrap gap-4">
-  <!-- Left side: Logo + Text info -->
-  <div class="flex items-start gap-4 flex-1 min-w-0">
-        <!-- Logo container -->
-        @if(experience.logoUrl) {
-        <div class="w-20 h-20 ">
-            <img 
+  <!-- Header with logo, title, and dates -->
+  <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+    
+    <!-- Left side: Logo + Text info -->
+    <div class="flex items-start gap-3 sm:gap-4 flex-1 min-w-0 w-full sm:w-auto">
+      <!-- Logo container -->
+      @if(experience.logoUrl) {
+        <div class="w-16 h-16 sm:w-20 sm:h-20 shrink-0">
+          <img 
             [src]="experience.logoUrl" 
             [alt]="experience.company + ' logo'"
-            class="w-full h-full object-contain "
+            class="w-full h-full object-contain"
             onerror="this.style.display='none'">
         </div>
-        }
+      }
     
-    <!-- Text content - stacked vertically -->
-    <div class="min-w-0">
-      <h3 class="text-xl md:text-2xl font-bold text-black mb-1">
-        {{ experience.position }}
-      </h3>
-      <p class="text-blue-800 text-lg font-medium">
-        {{ experience.company }}
-      </p>
+      <!-- Text content - stacked vertically -->
+      <div class="min-w-0 flex-1">
+        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-1">
+          {{ experience.position }}
+        </h3>
+        <p class="text-blue-800 text-base sm:text-lg font-medium">
+          {{ experience.company }}
+        </p>
+        
+        <!-- Location et dates sur mobile -->
+        <div class="block sm:hidden mt-2 space-y-1">
+          <div class="text-blue-800 text-sm">
+            {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
+          </div>
+          @if(experience.location) {
+            <div class="text-gray-700 text-sm flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              {{ experience.location }}
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right side: Dates (desktop only) -->
+    <div class="hidden sm:block text-right shrink-0">
+      <div class="text-blue-800 text-sm md:text-base">
+        {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
+      </div>
+      
+        <div class="text-gray-700 text-sm mt-1 flex items-center justify-end gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          {{ experience.location }} ddjjdjjd
+        </div>
+      
     </div>
   </div>
-  
-  <!-- Right side: Dates -->
-   <div class="text-right">
-        <div class="text-blue-800  text-sm md:text-base ">
-        {{ formatMonthYear(experience.startDate || '') }} - {{ formatMonthYear(experience.endDate || '') }}
-        </div>
-         <div class="text-gray-600 text-sm mt-1">
-            {{ experience.location }}
-         </div>
-  </div>
 
-
-
-</div>
+  <!-- Toggle button for mobile -->
+  <button 
+    (click)="toggleDetails()"
+    class="md:hidden w-full flex items-center justify-between px-4 py-2 mb-4 bg-white/20 hover:bg-white/30 rounded-lg transition-all text-gray-900 font-medium text-sm">
+    <span>{{ showDetails ? 'Masquer les détails' : 'Afficher les détails' }}</span>
+    <svg 
+      class="w-5 h-5 transition-transform duration-300"
+      [class.rotate-180]="showDetails"
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
 
   <!-- Description as bullet points -->
-  <ul class="space-y-3 mb-6 text-gray-900">
+  <ul 
+    class="space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-gray-900 text-sm sm:text-base"
+    [class.hidden]="!showDetails"
+    [class.md:block]="true">
     @for(point of getDescriptionPoints(); track $index) {
       @if(point.trim()) {
-        <li class="flex gap-3">
-          <span class="text-gray-900 mt-1.5 shrink-0">▸</span>
+        <li class="flex gap-2 sm:gap-3">
+          <span class="text-gray-900 mt-1 sm:mt-1.5 shrink-0 text-sm sm:text-base">▸</span>
           <span class="leading-relaxed text-black">{{ point.trim() }}</span>
         </li>
       }
@@ -53,7 +91,7 @@
   </ul>
 
   <!-- Skills Badges -->
-  <div class="flex flex-wrap gap-2 md:gap-3">
+  <div class="flex flex-wrap gap-2">
     @for(skill of experience.skills; track skill.title) {
       <app-techno-badge 
         [title]="skill.title"

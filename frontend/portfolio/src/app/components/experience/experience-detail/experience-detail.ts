@@ -11,6 +11,11 @@ import { SkillBadge } from '../../../shared/skill-badge/skill-badge';
 })
 export class ExperienceDetail {
   @Input() experience!:Experience;
+  showDetails = false;
+
+  toggleDetails() {
+    this.showDetails = !this.showDetails;
+  }
 
   private months = [
     'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -29,7 +34,7 @@ export class ExperienceDetail {
 
   ngOnInit(): void {
     // this.experience.logoUrl = "assets/companiesLogo/logo_edf_power_solutions.png"
-    console.log('skillsss ',this.experience.skills);
+    console.log('locationnnnnn ',this.experience.startDate);
   }
 
   getDescriptionPoints(): string[] {

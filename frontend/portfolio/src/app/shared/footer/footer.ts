@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Footer {
    name = 'Khady';
-  tagline = 'Ingénieure FullStack passionnée par la création d\'applications modernes et performantes.';
+  tagline = 'Ingénieure Logiciel FullStack.';
   location = 'Paris, France';
   
   currentYear = new Date().getFullYear();

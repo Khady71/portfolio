@@ -15,7 +15,7 @@
         <!-- Timeline container -->
 <div class="relative">
     <!-- Vertical line -->
-    <div class="absolute left-4 top-0 bottom-0 w-1.5 bg-gray-700"></div>
+    <!-- <div class="absolute left-4 top-0 bottom-0 w-1.5 bg-gray-700"></div> -->
     
     <div class="relative m-8">
         @for(experience of experiences; track experience.position; let i = $index) {
@@ -26,6 +26,8 @@
                 <app-experience-detail 
                     [experience]="experience">
                 </app-experience-detail>
+
+                <div class="absolute -left-5.5 top-2 w-4 h-4 bg-blue-500 rounded-xl border-4 border-slate-900 z-10"></div>
             </div>
         }
     </div>

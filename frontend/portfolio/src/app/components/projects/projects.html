@@ -25,7 +25,7 @@
             <br>
             <div >
             <!-- Header Section -->
-            <div class="flex items-center gap-4 mb-12">
+            <div class="flex items-center gap-4 mb-12 ">
                 <div class="w-12 h-12 bg-linear-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center shadow-lg">
                     <img src="https://icongr.am/clarity/briefcase.svg?size=64&color=ffffff" class="w-7 h-7" />
                 </div>
@@ -34,12 +34,20 @@
                     Autres 
                 </h2>
             </div>
-                <div class="flex flex-row w-full justify-between  m-8">
-                @for(labProject of labProjects; track labProject.title){
-                    <app-lab-project
-                    [labProject]="labProject">
-                    </app-lab-project>  
-                }
+                <div class="flex md:flex-col flex-col  justify-between gap-4 m-8 
+                backdrop-blur-md bg-white/20 border border-white/90 rounded-3xl p-6 md:p-8 hover:bg-slate-800/30 transition-all duration-300 shadow-xl">
+                    <div class="text-white font-[Lora]">
+                        <p>
+                            Ce sont quelques projets réalisés en TP matérialisant la théorie sur des technologies modernes utilisés en entreprise. 
+                        </p>
+                    </div>
+                    <div class="flex md:flex-row flex-col gap-8 mt-8">
+                    @for(labProject of labProjects; track labProject.title){
+                        <app-lab-project
+                        [labProject]="labProject">
+                        </app-lab-project>  
+                    }
+                    </div>
             </div>
         </div>
             

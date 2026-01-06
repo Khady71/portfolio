@@ -25,7 +25,7 @@ export interface Project {
   coverImageUrl?: string;
   images?: string[];
   skills?: Skill[]; 
-  githubUrl?: string;
+  github?: string;
   demoUrl?: string;
   featured?: boolean;
   createdAt?: string;
