@@ -14,7 +14,7 @@
 
 
             <!-- Projects List -->
-            <div class="space-x-20  m-8">
+            <div class="space-x-25 m-4">
                 @for(project of mainProjects; track project.title) {
                     <app-project-detail 
                     [project]="project">
@@ -30,15 +30,17 @@
                     <img src="https://icongr.am/clarity/briefcase.svg?size=64&color=ffffff" class="w-7 h-7" />
                 </div>
 
-                <h2 class="text-3xl md:text-5xl font-[Hoover] font-bold text-black px-4 py-2 bg-white/40 backdrop-blur-sm rounded-lg">
+                <h2 class="text-3xl md:text-5xl font-[Hoover] font-bold
+                 text-black px-4 py-2 bg-white/40 backdrop-blur-sm rounded-lg">
                     Autres 
                 </h2>
             </div>
-                <div class="flex md:flex-col flex-col  justify-between gap-4 m-8 
+                <div class="flex md:flex-col flex-col  justify-between gap-4 m-4
                 backdrop-blur-md bg-white/20 border border-white/90 rounded-3xl p-6 md:p-8 hover:bg-slate-800/30 transition-all duration-300 shadow-xl">
                     <div class="text-white font-[Lora]">
                         <p>
-                            Ce sont quelques projets réalisés en TP matérialisant la théorie sur des technologies modernes utilisés en entreprise. 
+                            Ce sont quelques projets réalisés en TP illustrant l’application concrète des notions théoriques sur des technologies modernes utilisés en entreprise. 
+                            Les codes sources sont disponibles sur github.
                         </p>
                     </div>
                     <div class="flex md:flex-row flex-col gap-8 mt-8">

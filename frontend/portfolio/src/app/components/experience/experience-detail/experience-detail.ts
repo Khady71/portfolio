@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Experience } from '../../../services/experience.service';
 import { TechnoBadge } from '../../../shared/techno-badge/techno-badge';
-import { SkillBadge } from '../../../shared/skill-badge/skill-badge';
 
 @Component({
   selector: 'app-experience-detail',
@@ -33,8 +32,7 @@ export class ExperienceDetail {
   }
 
   ngOnInit(): void {
-    // this.experience.logoUrl = "assets/companiesLogo/logo_edf_power_solutions.png"
-    console.log('locationnnnnn ',this.experience.startDate);
+    console.log('locationnnnnn ',this.experience.location);
   }
 
   getDescriptionPoints(): string[] {
