@@ -20,6 +20,7 @@ public class ExperienceResponseDTO {
     private String company;
     private String position;
     private String logoUrl;
+    private String location;
     private LocalDate startDate;
     private LocalDate endDate;
     private String description;
@@ -31,6 +32,7 @@ public class ExperienceResponseDTO {
         this.company = experience.getCompany();
         this.position = experience.getPosition();
         this.logoUrl = experience.getLogoUrl();
+        this.location = experience.getLocation();
         this.startDate = experience.getStartDate();
         this.endDate = experience.getEndDate();
         this.description = experience.getDescription();
