@@ -1,13 +1,15 @@
-<section class="bg-hero2 bg-repeat-y relative min-h-screen bg-top bg-length-[140%_auto] 
-   md:bg-cover md:bg-hero2 md:bg-center md:bg-fixed md:bg-repeat-y">
-   
-  <app-header ></app-header>
-  <main class="">
-    <router-outlet></router-outlet>
-  </main>
-  <footer>
-    <app-footer></app-footer>
-  </footer>
+<section class="bg-hero2 bg-repeat-y bg-top bg-length-[140%_auto] relative min-h-screen
+   md:bg-cover md:bg-hero2 md:bg-center md:bg-repeat md:bg-fixed  backdrop-blur-md">
+    <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div class="relative z-10">
+        <app-header ></app-header>
+        <main class="">
+          <router-outlet></router-outlet>
+        </main>
+        <footer>
+          <app-footer></app-footer>
+        </footer>
+  </div>
 </section>
 
 

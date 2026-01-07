@@ -2,13 +2,12 @@
 
 @theme {
  --background-image-hero1: url('/assets/background2.jpg');
- --background-image-hero2: url("/assets/bg-picture.png")  
-
+ /* --background-image-hero2: url("/assets/bg-picture2.jpg")   */
+  --background-image-hero2: url("/assets/bg-picture.png")  
 }
 
 /* Google fonts are loaded in index.html; define fallback families */
 :root{
-  --bg-hero1: url('/assets/background1.jpg'); 
   --bg-hero1: url('/assets/background1.jpg'); 
   --bg-hero2: url('/assets/background2.jpg'); 
   --primary: #6366F1;
