@@ -9,8 +9,5 @@ import { Component, Input } from '@angular/core';
 export class TechnoBadge {
   @Input() title: string = '';
   @Input() iconUrl?: string = '';
-  // ngOnInit(){
-  //   console.log('naaame',name);
-  // }
 
 }

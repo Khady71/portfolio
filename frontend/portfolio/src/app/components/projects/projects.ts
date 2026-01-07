@@ -40,7 +40,6 @@ export class Projects {
       ).subscribe({
         next: (projects) => {
           this.projects = projects;
-          console.log("Projecrsrecus", projects)
           this.separateProjectsByCategory(projects);
           this.sortProjectsByTitle();
             this.isLoading = false;
@@ -84,43 +83,6 @@ export class Projects {
       })
 
     }
-
-  //   mainProjects = [
-  //   {
-  //     title: 'RocketSaaS',
-  //     description: 'Plateforme SaaS complète avec gestion utilisateurs, paiements et dashboard analytics',
-  //     skills: [
-  //       { name: 'Java', iconUrl: 'https://icongr.am/devicon/java-original.svg?size=128' },
-  //       { name: 'Spring Boot', iconUrl: 'https://icongr.am/devicon/spring-original.svg?size=128' },
-  //       { name: 'Angular', iconUrl: 'https://icongr.am/devicon/angularjs-original.svg?size=128' },
-  //       { name: 'PostgreSQL', iconUrl: 'https://icongr.am/devicon/postgresql-original.svg?size=128' }
-  //     ],
-  //     githubUrl: 'https://github.com/username/rocketsaas',
-  //     demoUrl: 'https://rocketsaas.demo.com'
-  //   },
-  //   {
-  //     title: 'Betpa E-commerce',
-  //     description: 'Site e-commerce moderne avec panier, paiement et gestion des commandes',
-  //     skills: [
-  //       { name: 'Angular', iconUrl: 'https://icongr.am/devicon/angularjs-original.svg?size=128' },
-  //       { name: 'Spring Boot', iconUrl: 'https://icongr.am/devicon/spring-original.svg?size=128' },
-  //       { name: 'Stripe', iconUrl: 'https://icongr.am/simple/stripe.svg?size=128&colored=true' },
-  //       { name: 'PostgreSQL', iconUrl: 'https://icongr.am/devicon/postgresql-original.svg?size=128' }
-  //     ],
-  //     githubUrl: 'https://github.com/username/betpa',
-  //     demoUrl: 'https://betpa.demo.com'
-  //   },
-  //   {
-  //     title: 'Portfolio Website',
-  //     description: 'Site portfolio personnel avec animations et design moderne',
-  //     skills: [
-  //       { name: 'Angular', iconUrl: 'https://icongr.am/devicon/angularjs-original.svg?size=128' },
-  //       { name: 'Spring Boot', iconUrl: 'https://icongr.am/devicon/spring-original.svg?size=128' },
-  //       { name: 'Tailwind CSS', iconUrl: 'https://icongr.am/devicon/tailwindcss-plain.svg?size=128' }
-  //     ],
-  //     githubUrl: 'https://github.com/username/portfolio'
-  //   }
-  // ];
 }
 
 

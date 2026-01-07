@@ -68,11 +68,7 @@ export class Hero implements OnInit, OnDestroy{
   ];
 
   ngOnInit(): void {
-    // Mock data for testing - replace with actual service call
-
-    console.log('Skills array:', this.skills); // Add this line
-    console.log('Skills length:', this.skills.length); // Add this line
-  
+   
     this.user = {
       id:'',
       email:'',
@@ -81,15 +77,8 @@ export class Hero implements OnInit, OnDestroy{
       urlProfile: 'assets/pp_1.jpg'
     };
 
-    // Uncomment when service is available
-    // this.userService.getUserInfo().subscribe({
-    //   next: (data) => {
-    //     this.user = data;
-    //   },
-    //   error: (err) => console.error('Error Getting User Info', err)
-    // });
-
-    // Start typewriter animation after component loads
+   
+   
     setTimeout(() => {
       this.startTypewriter();
     }, 500);

@@ -31,9 +31,7 @@ export class ExperienceDetail {
     return `${month} ${year}`;
   }
 
-  ngOnInit(): void {
-    console.log('locationnnnnn ',this.experience.location);
-  }
+
 
   getDescriptionPoints(): string[] {
     if (!this.experience?.description) {
