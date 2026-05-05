@@ -10,6 +10,9 @@ import { Project, Skill } from '../../../services/project.service';
 export class LabProject {
   @Input() labProject!:Project;
 
+  demoUrl: boolean = false;
+  
+
     
   
 
